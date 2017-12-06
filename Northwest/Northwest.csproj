@@ -199,8 +199,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Compound.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\State.cs" />
+    <Compile Include="Models\ZipCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
