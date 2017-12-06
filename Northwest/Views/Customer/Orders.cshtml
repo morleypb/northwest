@@ -1,118 +1,134 @@
 ﻿@*
-@model IEnumerable<Northwest.Models.>
+    @model IEnumerable<Northwest.Models.>
 *@
 
 @{
     ViewBag.Title = "Orders";
     var counter = 1;
-}
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    var list = new List<Dictionary<string, string>>();
+    var dict = new Dictionary<string, string>();
+    var dict2 = new Dictionary<string, string>();
+    dict.Add("OrderNumber", "12345");
+    dict.Add("OrderDate", "12345");
+    dict.Add("OrderDetails", "12345");
+    dict.Add("Status", "12345");
+    dict.Add("Results", "12345");
+    dict.Add("Costs", "12345");
 
-    <div class="container-fluid">
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
+
+    dict2.Add("OrderNumber", "12345");
+    dict2.Add("OrderDate", "12345");
+    dict2.Add("OrderDetails", "12345");
+    dict2.Add("Status", "12345");
+    dict2.Add("Results", "12345");
+    dict2.Add("Costs", "12345");
+
+    list.Add(dict);
+    list.Add(dict2);
+}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
+            <a href="#">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Tables</li>
-      </ol>
-      <!-- Example DataTables Card-->
-      <div class="card mb-3">
+    </ol>
+    <!-- Example DataTables Card-->
+    <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
+            <i class="fa fa-table"></i> Data Table Example
+        </div>
         <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Order Number</th>
-                  <th>Order Date</th>
-                  <th>Order Details</th>
-                  <th>Status</th>
-                  <th>Results</th>
-                  <th>Cost</th>
-                  <th>Salary</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Order Number</th>
-                  <th>Order Date</th>
-                  <th>Order Details</th>
-                  <th>Status</th>
-                  <th>Results</th>
-                  <th>Cost</th>
-                  <th>Salary</th>
-                </tr>
-              </tfoot>
-              <tbody>
-@*
-    @foreach ()
-    {
+            <div class="table-responsive">
+                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Order Date</th>
+                            <th>Order Details</th>
+                            <th>Status</th>
+                            <th>Results</th>
+                            <th>Cost</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Order Date</th>
+                            <th>Order Details</th>
+                            <th>Status</th>
+                            <th>Results</th>
+                            <th>Cost</th>
+                            <th>Salary</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in list)
+                        {
 
-*@
-                    <tr id="clickCompound_@counter" onclick="showCompounds(@counter)">
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr style="display:none;" id="fadeCompound_@counter">
-                        <td></td>
-                        <td>Compound</td>
-                        <td>All Tests Passed</td>
-                        <td>View Details</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                  @{ counter++; }
+                            <tr id="clickCompound_@counter" onclick="showCompounds(@counter)">
+                                <td>@item</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr style="display:none; background-color:ghostwhite" id="fadeCompound_@counter">
+                                <td></td>
+                                <td>Compound</td>
+                                <td>All Tests Passed</td>
+                                <td>View Details</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            { counter++; }
 
-                  @*
-        }
-                  *@
-              </tbody>
-            </table>
-          </div>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
     </div>
-    <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-      <div class="container">
+</div>
+<!-- /.container-fluid-->
+<!-- /.content-wrapper-->
+<footer class="sticky-footer">
+    <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2017</small>
+            <small>Copyright © Your Website 2017</small>
         </div>
-      </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
     </div>
+</footer>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+</a>
+<!-- Logout Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     function showCompounds(id) {
         $('#fadeCompound_' + id).fadeToggle();
