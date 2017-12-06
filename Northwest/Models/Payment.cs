@@ -13,7 +13,7 @@ namespace Northwest.Models
         [Key]
         public virtual int PaymentID { get; set; }
 
-        [ForeignKey("Customer")]
+        [ForeignKey("Customers")]
         public virtual int CustomerID { get; set; }
 
         public string PaymentName { get; set; }

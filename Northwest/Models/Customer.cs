@@ -25,11 +25,6 @@ namespace Northwest.Models
         [StringLength(255, ErrorMessage = "Can only have 255 characters in your street address")]
         public string CustomerStreetAddress { get; set; }
 
-
-        [Required(ErrorMessage = "*Required")]
-        [StringLength(255, ErrorMessage = "Can only have 255 characters in your phone number")]
-        public string CustomerPhoneNumber { get; set; }
-
         [ForeignKey("State")]
         public virtual int StateID { get; set; }
 
@@ -38,5 +33,9 @@ namespace Northwest.Models
 
         [ForeignKey("Country")]
         public virtual int CountryID { get; set; }
+
+        [Required(ErrorMessage = "*Required")]
+        [StringLength(255, ErrorMessage = "Can only have 255 characters in your phone number")]
+        public string CustomerPhoneNumber { get; set; }
     }
 }
