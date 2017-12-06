@@ -12,6 +12,8 @@ namespace Northwest.Models
         [ForeignKey("Customers")]
         public virtual int CustomerID { get; set; }
 
+        public virtual Customers Customers { get; set; }
+
         [ForeignKey("Discount")]
         public virtual int Discount { get; set; }
     }

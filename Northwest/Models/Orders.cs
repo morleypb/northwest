@@ -18,6 +18,8 @@ namespace Northwest.Models
         [ForeignKey("Customers")]
         public virtual int CustomerID { get; set; }
 
+        public virtual Customers Customers { get; set; }
+
         public decimal QuotePrice { get; set; }
 
         public string Comment { get; set; }

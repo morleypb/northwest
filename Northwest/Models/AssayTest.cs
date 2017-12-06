@@ -16,8 +16,12 @@ namespace Northwest.Models
         [ForeignKey("Assay")]
         public virtual int AssayID { get; set; }
 
+        public virtual Assay Assay { get; set; }
+
         [ForeignKey("Test")]
         public virtual int TestID { get; set; }
+
+        public virtual Test Test { get; set; }
 
         public int Required { get; set; }
 

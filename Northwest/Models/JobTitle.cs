@@ -17,5 +17,7 @@ namespace Northwest.Models
 
         [ForeignKey("Department")]
         public virtual int DepartmentID { get; set; }
+
+        public virtual Department Department { get; set; }
     }
 }

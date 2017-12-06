@@ -13,7 +13,11 @@ namespace Northwest.Models
         [ForeignKey("Test")]
         public virtual int TestID { get; set; }
 
+        public virtual Test Test { get; set; }
+
         [ForeignKey("Materials")]
         public virtual int MaterialsID { get; set; }
+
+        public virtual Materials Materials { get; set; }
     }
 }

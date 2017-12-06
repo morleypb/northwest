@@ -13,7 +13,11 @@ namespace Northwest.Models
         [ForeignKey("Compound")]
         public virtual int CompoundID { get; set; }
 
+        public virtual Compound Compound { get; set; }
+
         [ForeignKey("Animal")]
         public virtual int AnimalID { get; set; }
+
+        public virtual Animal Animal { get; set; }
     }
 }

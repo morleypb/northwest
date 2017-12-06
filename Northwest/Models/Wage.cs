@@ -17,5 +17,7 @@ namespace Northwest.Models
 
         [ForeignKey("WageType")]
         public virtual int WageTypeID { get; set; }
+
+        public virtual WageType WageType { get; set; }
     }
 }

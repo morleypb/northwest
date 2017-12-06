@@ -205,7 +205,7 @@
     <Compile Include="Models\Compound.cs" />
     <Compile Include="Models\CompoundAnimal.cs" />
     <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\CustomerDiscounts.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Discount.cs" />

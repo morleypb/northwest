@@ -25,5 +25,7 @@ namespace Northwest.Models
 
         [ForeignKey("Orders")]
         public virtual int OrderID { get; set; }
+
+        public virtual Orders Orders { get; set; }
     }
 }

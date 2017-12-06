@@ -16,8 +16,12 @@ namespace Northwest.Models
         [ForeignKey("Compound")]
         public virtual int CompoundID { get; set; }
 
+        public virtual Compound Compound { get; set; }
+
         [ForeignKey("AssayTest")]
         public virtual int AssayTestID { get; set; }
+
+        public virtual AssayTest AssayTest { get; set; }
 
         public decimal SampleWeight { get; set; }
 

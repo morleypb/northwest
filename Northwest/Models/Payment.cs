@@ -16,6 +16,8 @@ namespace Northwest.Models
         [ForeignKey("Customers")]
         public virtual int CustomerID { get; set; }
 
+        public virtual Customers Customers { get; set; }
+
         public string PaymentName { get; set; }
 
         public string PaymentDesc { get; set; }
@@ -34,10 +36,16 @@ namespace Northwest.Models
         [ForeignKey("State")]
         public virtual int StateID { get; set; }
 
+        public virtual State State { get; set; }
+
         [ForeignKey("ZipCode")]
         public virtual int ZipID { get; set; }
 
+        public virtual ZipCode ZipCode { get; set; }
+
         [ForeignKey("Country")]
         public virtual int CountryID { get; set; }
+
+        public virtual Country Country { get; set; }
     }
 }
