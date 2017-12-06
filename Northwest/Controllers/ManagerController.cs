@@ -12,7 +12,6 @@ namespace Northwest.Controllers
         public ActionResult Index()
         {
             return View("ManagerPortal");
-
         }
     }
 }
