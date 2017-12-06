@@ -11,7 +11,7 @@ namespace Northwest.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            return View();
+            return View("CustomerPortal");
         }
     }
 }
