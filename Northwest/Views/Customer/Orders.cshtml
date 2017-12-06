@@ -54,7 +54,7 @@
     {
 
 *@
-                    <tr class="compoundClick@counter">
+                    <tr id="clickCompound_@counter" onclick="showCompounds(@counter)">
                         <td>Tiger Nixon</td>
                         <td>System Architect</td>
                         <td>Edinburgh</td>
@@ -62,13 +62,16 @@
                         <td>2011/04/25</td>
                         <td>$320,800</td>
                     </tr>
-                    <tr style="display:none;" class="slideUp">
-                        <td></td>
+                    <tr style="display:none;" id="fadeCompound_@counter">
                         <td></td>
                         <td>Compound</td>
                         <td>All Tests Passed</td>
                         <td>View Details</td>
+                        <td></td>
+                        <td></td>
                     </tr>
+                  @{ counter++; }
+
                   @*
         }
                   *@
@@ -111,9 +114,7 @@
       </div>
     </div>
 <script>
-    $(document).ready(function () {
-        $('.slideDown').on('click', function (e) {
-            $('.slideUp').fadeToggle();
-        });
-    });
+    function showCompounds(id) {
+        $('#fadeCompound_' + id).fadeToggle();
+    }
 </script>
