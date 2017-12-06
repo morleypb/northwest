@@ -18,5 +18,20 @@ namespace Northwest.Controllers
         {
             return View();
         }
+
+        public ActionResult FAQ()
+        {
+            return View();
+        }
+
+        public ActionResult CustProfile()
+        {
+            return View();
+        }
+
+        public ActionResult Navbar()
+        {
+            return View();
+        }
     }
 }

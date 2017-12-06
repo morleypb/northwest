@@ -339,6 +339,9 @@
     <Content Include="vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Views\Manager\ManagerPortal.cshtml" />
     <Content Include="Views\Customer\Orders.cshtml" />
+    <Content Include="Views\Customer\FAQ.cshtml" />
+    <Content Include="Views\Customer\CustProfile.cshtml" />
+    <Content Include="Views\Customer\Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
