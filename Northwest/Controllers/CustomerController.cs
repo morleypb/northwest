@@ -13,5 +13,10 @@ namespace Northwest.Controllers
         {
             return View("CustomerPortal");
         }
+
+        public ActionResult Orders()
+        {
+            return View();
+        }
     }
 }
