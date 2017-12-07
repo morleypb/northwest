@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Northwest Labs, Inc.</title>
     <!-- Bootstrap core CSS-->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -16,53 +16,48 @@
     <!-- Custom styles for this template-->
     <link href="/Content/css/sb-admin.css" rel="stylesheet">
     @*
-        @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-        *@
+            @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    *@
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="/Employees/SeattleEmployeePortal/">Northwest Labs, Inc.</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Overview">
-                    <a class="nav-link" href="/Customer">
+                    <a class="nav-link" href="/Employee/SingaporeEmployeePortal">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Overview</span>
                     </a>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
-                    <a class="nav-link" href="/Customer/Orders">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Orders</span>
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-fw fa-comments"></i>
+                        <span class="nav-link-text">Messages</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="FAQ">
-                    <a class="nav-link" href="/Customer/FAQ">
-                        <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">FAQ</span>
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-fw fa-flask"></i>
+                        <span class="nav-link-text">Compounds</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="FAQ">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-fw fa-pencil-square-o"></i>
+                        <span class="nav-link-text">Upload Raw Results</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Profile">
-                    <a class="nav-link" href="/Customer/CustProfile">
+                    <a class="nav-link" href="#">
                         <i class="fa fa-fw fa-sitemap"></i>
                         <span class="nav-link-text">Profile</span>
                     </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">Settings</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseComponents">
-                        <li>
-                            <a href="/Customer/Navbar">Navbar</a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
             <ul class="navbar-nav sidenav-toggler">
@@ -90,7 +85,7 @@
                         <a class="dropdown-item" href="#">
                             <strong>David Miller</strong>
                             <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+                            <div class="dropdown-message small">Hey I need a quote for the compound with the compoundID of 3452123. </div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">
@@ -102,57 +97,10 @@
                         <a class="dropdown-item" href="#">
                             <strong>John Doe</strong>
                             <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+                            <div class="dropdown-message small">I've sent the final report over to you for review. When you're able to sign off on it let me know and I will pass it on to the customer.</div>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item small" href="#">View all messages</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-fw fa-bell"></i>
-                        <span class="d-lg-none">
-                            Alerts
-                            <span class="badge badge-pill badge-warning">6 New</span>
-                        </span>
-                        <span class="indicator text-warning d-none d-lg-block">
-                            <i class="fa fa-fw fa-circle"></i>
-                        </span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-                        <h6 class="dropdown-header">New Alerts:</h6>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <span class="text-success">
-                                <strong>
-                                    <i class="fa fa-long-arrow-up fa-fw"></i>Status Update
-                                </strong>
-                            </span>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <span class="text-danger">
-                                <strong>
-                                    <i class="fa fa-long-arrow-down fa-fw"></i>Status Update
-                                </strong>
-                            </span>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <span class="text-success">
-                                <strong>
-                                    <i class="fa fa-long-arrow-up fa-fw"></i>Status Update
-                                </strong>
-                            </span>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item small" href="#">View all alerts</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -179,10 +127,6 @@
 
     <div class="content-wrapper">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
     <!-- Bootstrap core JavaScript-->

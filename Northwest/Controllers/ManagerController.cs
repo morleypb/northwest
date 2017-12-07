@@ -13,5 +13,10 @@ namespace Northwest.Controllers
         {
             return View("ManagerPortal");
         }
+
+        public ActionResult ManagerPortal()
+        {
+            return View();
+        }
     }
 }
