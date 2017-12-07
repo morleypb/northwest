@@ -366,10 +366,15 @@
     <Content Include="Views\Customer\FAQ.cshtml" />
     <Content Include="Views\Customer\CustProfile.cshtml" />
     <Content Include="Views\Customer\Navbar.cshtml" />
+    <Content Include="Views\Employee\SeattleEmployeePortal.cshtml" />
+    <Content Include="Views\Employee\SingaporeEmployeePortal.cshtml" />
+    <Content Include="Views\Shared\_Layout_Employee.cshtml" />
+    <Content Include="Views\Shared\_Layout_Manager.cshtml" />
+    <Content Include="Views\Employee\_ViewStart.cshtml" />
+    <Content Include="Views\Manager\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

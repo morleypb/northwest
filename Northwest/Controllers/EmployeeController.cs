@@ -13,5 +13,15 @@ namespace Northwest.Controllers
         {
             return View();
         }
+
+        public ActionResult SingaporeEmployeePortal()
+        {
+            return View();
+        }
+
+        public ActionResult SeattleEmployeePortal()
+        {
+            return View();
+        }
     }
 }
