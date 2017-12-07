@@ -1,4 +1,7 @@
 ﻿
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
 
 @{
     ViewBag.Title = "CreateOrder";
@@ -106,12 +109,25 @@
 
 <script>
     var compounds = {
-        Florium: 'Florium',
-        Ammonium: 'Ammonium',
-        Vibranium: 'Vibranium',
-        Florinium: 'Florinium'
+        Morphobond:'Morphobond',
+        Amlodipine:'Amlodipine',
+        Methadone:'Methadone',
+        Percocet:'Percocet',
+        Hydrocodone:'Hydrocodone',
+        Buprenorphine:'Buprenorphine',
+        Lisinopril:'Lisinopril',
+        Simvastatin:'Simvastatin',
+        Levothyroxine:'Levothyroxine',
+        Omeprazole:'Omeprazole' 
     };
-    var assays = { PS: 'PS', CS: 'CS', ES: 'ES', QS: 'QS', Jquery: 'Jquery', Ammon: 'Ammon', Philium: "Philium", Sottium: 'Sottium' };
+    var assays = {
+        BiochemicalPharmacology: 'BiochemicalPharmacology',
+        DiscoveryScreen: 'DiscoveryScreen',
+        ImmunoScreen: 'ImmunoScreen',
+        ProfilingScreen: 'ProfilingScreen',
+        PharmaScreen: 'PharmaScreen',
+        CustomScreen: 'CustomScreen'
+    };
     var matching = [];
 
     $('#exampleInputEmail').on('keyup', function (e) {
@@ -132,13 +148,11 @@
     });
 
     function removeFromAssayList(assay) {
-        console.log($('.tag[name=' + assay + ']'));
         $('.tag[name=' + assay + ']').remove();
         $('.assayType[name=' + assay + ']').css("background-color", "white");
     }
 
     function addToAssayList(assay) {
-        console.log('removeFromAssayList("' + assay + '")');
         $('#chosenAssays').append('<h5 class="col-md-12 tag text-center" style="background-color: rgba(0, 123, 255, .5);" name="' + assay + '">' + assay + '<span style="float:right;" class="pointer" onclick="removeFromAssayList(`' + assay + '`)">X</span></h5>')
         $('.assayType[name=' + assay + ']').css("background-color", "rgba(0, 123, 255, .5)");
     }
