@@ -344,3 +344,12 @@ footer.sticky-footer {
 @media (min-width: 992px) {
   body.sidenav-toggled footer.sticky-footer {
     width: calc(100% - 55px); } }
+
+#chatBox {
+    width: 300px;
+    position: fixed;
+    bottom: 0px;
+    right: 15px;
+    height: 55px !important;
+    background-color: #d93e2b;
+}

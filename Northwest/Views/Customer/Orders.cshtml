@@ -36,12 +36,12 @@
         <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item active">Order History</li>
     </ol>
     <!-- Example DataTables Card-->
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-table"></i> Data Table Example
+            <i class="fa fa-table"></i> Order History
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -50,52 +50,46 @@
                         <tr>
                             <th>Order Number</th>
                             <th>Order Date</th>
-                            <th>Order Details</th>
+                            <th>Compounds</th>
                             <th>Status</th>
-                            <th>Results</th>
                             <th>Cost</th>
-                            <th>Salary</th>
+                            <th>View Results</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Order Number</th>
-                            <th>Order Date</th>
-                            <th>Order Details</th>
-                            <th>Status</th>
-                            <th>Results</th>
-                            <th>Cost</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @foreach (var item in list)
                         {
 
                             <tr id="clickCompound_@counter" onclick="showCompounds(@counter)">
-                                <td>@item</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>@*@item*@43524413</td>
+                                <td>12/27/1945</td>
+                                <td>3 Compound</td>
+                                <td>In Progress</td>
+                                <td>$1500</td>
+                                <td>-</td>
                             </tr>
-                            <tr style="display:none; background-color:ghostwhite" id="fadeCompound_@counter">
-                                <td></td>
-                                <td>Compound</td>
-                                <td>All Tests Passed</td>
-                                <td>View Details</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            { counter++; }
+                            @*
+                            @foreach (var comp in compound)
+                            {
+                            *@
+                                <tr style="display:none; background-color:lightgrey" id="fadeCompound_@counter">
+                                    <td></td>
+                                    <td></td>
+                                    <td>Florium</td>
+                                    <td>Completed</td>
+                                    <td>$400</td>
+                                    <td><button>Results</button></td>
+                                </tr>
 
+                            @*
+                            }
+                            *@
+                            { counter++; }
                         }
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
 </div>
 <!-- /.container-fluid-->

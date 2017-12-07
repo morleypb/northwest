@@ -33,5 +33,10 @@ namespace Northwest.Controllers
         {
             return View();
         }
+
+        public ActionResult CreateOrder()
+        {
+            return View();
+        }
     }
 }
