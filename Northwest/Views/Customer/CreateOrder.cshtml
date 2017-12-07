@@ -1,18 +1,159 @@
 ﻿
+
 @{
     ViewBag.Title = "CreateOrder";
 }
+<style>
+    #chosenAssays {
+        overflow: auto;
+        height: 300px;
+    }
+
+    .compoundChoice {
+        margin: 0px;
+        padding: 2px;
+        border-radius: 3px;
+    }
+
+    .compoundChoice:hover {
+        background-color: rgba(0, 123, 255, .3);
+    }
+
+    .pointer {
+        cursor:pointer;
+        user-select: none;
+    }
+
+    .border {
+        border: solid grey 1px !important;
+        border-radius: 2px;
+        padding: 5px;
+    }
+
+    .assayType {
+        margin: 10px;
+        border: solid black 1px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .tag {
+        padding: 5px;
+        margin: 5px;
+        border: solid grey 1px;
+        border-radius: 5px;
+    }
+
+    .box {
+        overflow: auto;
+        border: solid black 1px;
+    }
+
+    #assays {
+        height: 300px;
+    }
+</style>
 
 <div class="container-fluid">
-    <form role="form">
-        <div class="form-group">
-            <label class="control-label" for="exampleInputEmail">Compound</label>
-            <input type="text" class="form-control" id="exampleInputEmail" placeholder="Type Compound...">
+    <div class="form-group">
+        <h5 class="control-label" for="exampleInputEmail">Compound</h5>
+        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Type the compound you will ship...">
+        <div id="compoundsYa"></div>
+    </div>
+    <br />
+    <h5>Assay</h5>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i> Click on desired Assay
+                </div>
+                <div class="card-body">
+                   @* fill this div *@
+                    <div id="assays" class="row"></div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label class="control-label" for="exampleInputEmail">Assay</label>
-            <input type="text" class="form-control" id="exampleInputEmail" placeholder="Search bar with dropdown on focus">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i> Chosen Assays
+                </div>
+                <div class="card-body">
+                   @* fill this div *@
+                    <div id="chosenAssays" class="col-md-12"></div>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+
+    </div>
+
+    <div class="form-group">
+        <h5>Any Additional Information</h5>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="checkbox">
+        <h5>Rush Order? </h5>
+        <input type="checkbox"> Yes
+    </div>
+    <br />
+
+    <button type="submit" onclick="window.location = '/Customer/OrderSummary'" class="btn btn-default">Submit</button>
+    <br />
 </div>
+
+
+<script>
+    var compounds = {
+        Florium: 'Florium',
+        Ammonium: 'Ammonium',
+        Vibranium: 'Vibranium',
+        Florinium: 'Florinium'
+    };
+    var assays = { PS: 'PS', CS: 'CS', ES: 'ES', QS: 'QS', Jquery: 'Jquery', Ammon: 'Ammon', Philium: "Philium", Sottium: 'Sottium' };
+    var matching = [];
+
+    $('#exampleInputEmail').on('keyup', function (e) {
+        $('#compoundsYa').removeClass('border');
+        $('#compoundsYa').html('');
+        matching = [];
+        let compoundValue = e.target.value.toLowerCase();
+        for (var c in compounds) {
+            if (compoundValue && compounds[c].toLowerCase().includes(compoundValue)) {
+                matching.push(compounds[c]);
+            }
+        }
+
+        matching.forEach(match => {
+            $('#compoundsYa').append(`<h5 class="compoundChoice pointer" onclick="replaceCompoundChoice('${match}')">${match}</h5>`);
+            $('#compoundsYa').addClass('border');
+        });
+    });
+
+    function removeFromAssayList(assay) {
+        console.log($('.tag[name=' + assay + ']'));
+        $('.tag[name=' + assay + ']').remove();
+        $('.assayType[name=' + assay + ']').css("background-color", "white");
+    }
+
+    function addToAssayList(assay) {
+        console.log('removeFromAssayList("' + assay + '")');
+        $('#chosenAssays').append('<h5 class="col-md-12 tag text-center" style="background-color: rgba(0, 123, 255, .5);" name="' + assay + '">' + assay + '<span style="float:right;" class="pointer" onclick="removeFromAssayList(`' + assay + '`)">X</span></h5>')
+        $('.assayType[name=' + assay + ']').css("background-color", "rgba(0, 123, 255, .5)");
+    }
+
+
+    function addAssays() {
+        for (var a in assays) {
+            $('#assays').append(`<h5 class="col-md-5 text-center assayType pointer" name="${assays[a]}" onclick="addToAssayList('${assays[a]}')">${assays[a]}</h5>`);
+        }
+    }
+
+    function replaceCompoundChoice(compound) {
+        $('#exampleInputEmail').val(compound);
+        $('#compoundsYa').removeClass('border');
+        $('#compoundsYa').html('');
+    }
+    addAssays();
+</script>

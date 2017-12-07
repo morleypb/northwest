@@ -350,6 +350,19 @@ footer.sticky-footer {
     position: fixed;
     bottom: 0px;
     right: 15px;
+}
+
+.pointer {
+    cursor: pointer;
+    user-select: none;
+}
+
+.chatCard {
     height: 55px !important;
+    background-color: #d93e2b;
+}
+
+.chatCardBox {
+    height: 300px !important;
     background-color: #d93e2b;
 }
