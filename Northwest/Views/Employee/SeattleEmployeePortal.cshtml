@@ -131,11 +131,31 @@
                     </div>
                 </div>
             </footer>
-            <div class="card text-white o-hidden h-100" id="chatBox">
-                <div class="card-body">
-                    <div class="card-body-icon">
-                        <i class="fa fa-fw fa-comments" height="50px" width="100px"></i>
-                    </div>
-                    <div class="mr-5" style="text-align:center;">Chat With Customer!</div>
-                </div>
+
+<div id="chatBox">
+    <div class="card text-white o-hidden h-100 chatCardBox" style="display:none;">
+        <div class="card-body">
+            <p><b>Chat Box</b></p>
+            <div class="border" style="height:180px; border-radius:5px; margin-bottom: 10px; font-size: 12px; overflow-y:auto; overflow-x: hidden;" id="chatComment">
             </div>
+            <div class="form-group">
+                <textarea class="form-control" rows="2" id="chatCommentEnter"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="card text-white o-hidden h-100 chatCard pointer">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-comments" height="50px"></i>
+            </div>
+            <div class="mr-5">Ask questions through chat!</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.chatCard').on('click', function () {
+        $('.chatCardBox').fadeToggle();
+    });
+
+</script>

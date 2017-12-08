@@ -60,8 +60,8 @@
 <div class="container-fluid">
     <div class="form-group">
         <h5 class="control-label" for="exampleInputEmail">Compound</h5>
-        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Type the compound you will ship...">
-        <div id="compoundsYa"></div>
+        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Type the compound you will ship..." style="max-width:50%;">
+        <div id="compoundsYa" style="max-width:50%;"></div>
     </div>
     <br />
     <h5>Assay</h5>
@@ -69,7 +69,7 @@
         <div class="col-md-8">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-bar-chart"></i> Click on desired Assay - Green assays are suggested
+                    <i class="fa fa-pencil-square-o "></i> Click on desired Assay - Green assays are suggested
                 </div>
                 <div class="card-body">
                    @* fill this div *@
@@ -80,7 +80,7 @@
         <div class="col-md-4">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-bar-chart"></i> Chosen Assays
+                    <i class="fa fa-pencil-square-o "></i> Chosen Assays
                 </div>
                 <div class="card-body">
                    @* fill this div *@
@@ -95,18 +95,24 @@
         <h5>Any Additional Information</h5>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
-
+    <p class="text-danger">Based on your selections, testing should be finished in two to three weeks.</p>
+    <br />
     <div class="checkbox">
         <h5>Rush Order? </h5>
         <input type="checkbox"> Yes
     </div>
     <br />
-
-    <p>Based on your selections, testing should be finished between 12/14/17 (Wednesday) and 12/20/17 (Tuesday)</p>
+    <div class="form-group">
+        <h5 class="control-label" for="exampleInputEmail">Due Date?</h5>
+        <input type="date" class="form-control" id="exampleInputEmail" placeholder="Enter Referral ID" style="max-width:20%;">
+    </div>
+    <div class="form-group">
+        <h5 class="control-label" for="exampleInputEmail">Referred By?</h5>
+        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter Referral ID" style="max-width:20%;">
+    </div>
 
     <button type="submit" onclick="window.location = '/Customer/OrderSummary'" class="btn btn-default">Submit</button>
 </div>
-<br />
 
 <div id="chatBox">
     <div class="card text-white o-hidden h-100 chatCardBox" style="display:none;">
