@@ -69,7 +69,7 @@
         <div class="col-md-8">
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-bar-chart"></i> Click on desired Assay
+                    <i class="fa fa-bar-chart"></i> Click on desired Assay - Green assays are suggested
                 </div>
                 <div class="card-body">
                    @* fill this div *@
@@ -102,17 +102,36 @@
     </div>
     <br />
 
+    <p>Based on your selections, testing should be finished between 12/14/17 (Wednesday) and 12/20/17 (Tuesday)</p>
+
     <button type="submit" onclick="window.location = '/Customer/OrderSummary'" class="btn btn-default">Submit</button>
 </div>
 <br />
 
-<footer class="sticky-footer">
-    <div class="container">
-        <div class="text-center">
-            <small>Copyright © Northwest Labs, Inc.</small>
+<div id="chatBox">
+    <div class="card text-white o-hidden h-100 chatCardBox" style="display:none;">
+        <div class="card-body">
+            <p><b>Chat Box</b></p>
+            <div class="border" style="height:180px; border-radius:5px; margin-bottom: 10px; font-size: 12px; overflow-y:auto; overflow-x: hidden;" id="chatComment">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" rows="2" id="chatCommentEnter"></textarea>
+            </div>
         </div>
     </div>
-</footer>
+    <div class="card text-white o-hidden h-100 chatCard pointer">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-comments" height="50px"></i>
+            </div>
+            <div class="mr-5">Ask questions through chat!</div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <script>
     var compounds = {
@@ -128,12 +147,30 @@
         Omeprazole:'Omeprazole' 
     };
     var assays = {
-        BiochemicalPharmacology: 'BiochemicalPharmacology',
-        DiscoveryScreen: 'DiscoveryScreen',
-        ImmunoScreen: 'ImmunoScreen',
-        ProfilingScreen: 'ProfilingScreen',
-        PharmaScreen: 'PharmaScreen',
-        CustomScreen: 'CustomScreen'
+        BiochemicalPharmacology: {
+            name: 'BiochemicalPharmacology',
+            quote: '$475 - $600'
+        },
+        DiscoveryScreen: {
+            name: 'DiscoveryScreen',
+            quote: '$325 - $450'
+        },
+        ImmunoScreen: {
+            name: 'ImmunoScreen',
+            quote: '$450 - $575'
+        },
+        ProfilingScreen: {
+            name: 'ProfilingScreen',
+            quote: '$200 - $500'
+        },
+        PharmaScreen: {
+            name: 'PharmaScreen',
+            quote: '$250 - $400'
+        },
+        CustomScreen: {
+            name: 'CustomScreen',
+            quote: '$200 - $250'
+        }
     };
     var matching = [];
 
@@ -167,7 +204,7 @@
 
     function addAssays() {
         for (var a in assays) {
-            $('#assays').append(`<h5 class="col-md-5 text-center assayType pointer" name="${assays[a]}" onclick="addToAssayList('${assays[a]}')">${assays[a]}</h5>`);
+            $('#assays').append(`<div class="col-md-5 text-center assayType pointer" name="${assays[a].name}" onclick="addToAssayList('${assays[a].name}')"><h5>${assays[a].name}</h5><h5>${assays[a].quote}</h5></div>`);
         }
     }
 
@@ -175,6 +212,37 @@
         $('#exampleInputEmail').val(compound);
         $('#compoundsYa').removeClass('border');
         $('#compoundsYa').html('');
+        $('.assayType[name=DiscoveryScreen]').css('background-color', 'rgba(40,167,69,.5');
+        $('.assayType[name=ImmunoScreen]').css('background-color', 'rgba(40,167,69,.5');
     }
     addAssays();
+
+
+
+
+
+    $('.chatCard').on('click', function () {
+        $('.chatCardBox').fadeToggle();
+    });
+
+    var count = 1;
+    $('#chatCommentEnter').keydown(function(e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            $('#chatComment').append('<p style="padding: 10px; margin-bottom: 0px;"><b><u>Customer</u>:</b>   '+e.target.value+'</p>');
+            e.target.value = '';
+            $('#chatComment').scrollTop($('#chatComment')[0].scrollHeight);
+            setTimeout(function () {
+                if (count == 1) {
+                    $('#chatComment').append('<p style="padding: 10px; padding-left: 30px; margin-bottom: 0px;"><b><u>Seattle Employee</u>:</b> Sure thing! Give me a second and Ill get right back to you.</p>');
+                    setTimeout(function () {
+                        $('#chatComment').append('<p style="padding: 10px; padding-left: 30px; margin-bottom: 0px;"><b><u>Seattle Employee</u>:</b> It looks like that assay could be anywhere between $700-$1000.</p>');
+                    }, 5100);
+                }
+                if (count == 2) $('#chatComment').append('<p style="padding: 10px; padding-left: 30px; margin-bottom: 0px;"><b><u>Seattle Employee</u>:</b> Depending on how busy we are, it could take anywhere from  3 to 7 days to run the tests and analyze the results.</p>');
+                $('#chatComment').scrollTop($('#chatComment')[0].scrollHeight);
+                count++;
+            }, 3000);
+        }
+    });
 </script>
