@@ -38,5 +38,11 @@ namespace Northwest.Controllers
         {
             return View();
         }
+
+        public ActionResult CompoundDetails()
+        {
+            return View();
+        }
+
     }
 }

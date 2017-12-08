@@ -1,10 +1,8 @@
-﻿@*
-    @model IEnumerable<Northwest.Models.>
-*@
-
+﻿
 @{
-    ViewBag.Title = "Orders";
+    ViewBag.Title = "CompoundDetails";
 }
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
@@ -20,19 +18,17 @@
     <!-- Example DataTables Card-->
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-table"></i> Order History
+            <i class="fa fa-table"></i> Compound Details
         </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+        <div class="card-body row">
+            <h1 class="text-center col-md-12">Methadone</h1>
+            <div class="table-responsive col-md-8">
+                <button style="float:right;">See Full Report</button>
+                <table class="table table-hover text-center" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Order Number</th>
-                            <th>Order Date</th>
-                            <th>Compounds</th>
-                            <th>Status</th>
-                            <th>Cost</th>
-                            <th>View Details</th>
+                            <th>Assay</th>
+                            <th>Results</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,18 +36,10 @@
                         <tr id="clickCompound_2" class="pointer" onclick="showCompounds(2)">
                             <td>7483938</td>
                             <td>12/27/2016</td>
-                            <td>1 Compound</td>
-                            <td>Arrived</td>
-                            <td>$600</td>
-                            <td><button>Full Details</button></td>
                         </tr>
                         <tr style="display:none; background-color:lightgrey" class="fadeCompound_2 pointer">
                             <td></td>
                             <td></td>
-                            <td>Hydrocodone</td>
-                            <td>Arrived</td>
-                            <td>$600</td>
-                            <td><button onclick="window.location = '/Customer/CompoundDetails/'">Details</button></td>
                         </tr>
 
 
@@ -60,34 +48,18 @@
                         <tr id="clickCompound_1" class="pointer" onclick="showCompounds(1)">
                             <td>3434623</td>
                             <td>11/22/2016</td>
-                            <td>3 Compounds</td>
-                            <td>In Testing</td>
-                            <td>$1150</td>
-                            <td><button>Full Details</button></td>
                         </tr>
                         <tr style="display:none; background-color:lightgrey" class="fadeCompound_1">
                             <td></td>
                             <td></td>
-                            <td>Methadone</td>
-                            <td>Completed</td>
-                            <td>$400</td>
-                            <td><button onclick="window.location = '/Customer/CompoundDetails/'">Details</button></td>
                         </tr>
                         <tr style="display:none; background-color:lightgrey" class="fadeCompound_1">
                             <td></td>
                             <td></td>
-                            <td>Amlodipine</td>
-                            <td>In Testing</td>
-                            <td>$500</td>
-                            <td><button onclick="window.location = '/Customer/CompoundDetails/'">Details</button></td>
                         </tr>
                         <tr style="display:none; background-color:lightgrey" class="fadeCompound_1">
                             <td></td>
                             <td></td>
-                            <td>Morphobond</td>
-                            <td>In Testing</td>
-                            <td>$250</td>
-                            <td><button onclick="window.location = '/Customer/CompoundDetails/'">Details</button></td>
                         </tr>
 
 
@@ -95,18 +67,10 @@
                         <tr id="clickCompound_3" class="pointer" onclick="showCompounds(3)">
                             <td>0909834</td>
                             <td>10/10/2016</td>
-                            <td>1 Compound</td>
-                            <td>Complete</td>
-                            <td>$300</td>
-                            <td><button>Full Details</button></td>
                         </tr>
                         <tr style="display:none; background-color:lightgrey" class="fadeCompound_3 pointer">
                             <td></td>
                             <td></td>
-                            <td>Percocet</td>
-                            <td>Complete</td>
-                            <td>$300</td>
-                            <td><button onclick="window.location = '/Customer/CompoundDetails/'">Details</button></td>
                         </tr>
 
 

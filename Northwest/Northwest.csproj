@@ -373,6 +373,7 @@
     <Content Include="Views\Employee\_ViewStart.cshtml" />
     <Content Include="Views\Manager\_ViewStart.cshtml" />
     <Content Include="Views\Customer\CreateOrder.cshtml" />
+    <Content Include="Views\Customer\CompoundDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
